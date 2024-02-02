@@ -1,44 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ostli</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #89CFF0;
+            font-size: 50px;
+            margin: 0;
+            animation: pulse 2s infinite;
+        }
+        h2 {
+            color: black;
+            font-size: 20px;
+            margin: 0;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
 </head>
 <body>
-<header>
-    <h1 class="title">OSTLI</h1>
-    <nav>
-        <ul class="nav-list">
-            <li><a href="#information">Information</a></li>
-            <li class="dropdown">
-                <a href="#" class="contact-button">Contact us</a>
-                <div class="dropdown-content">
-                    <a href="mailto:info@miikkamaikkari.com">Email</a>
-                </div>
-            </li>
-            <li><a href="#youtube">Youtube</a></li>
-        </ul>
-    </nav>
-</header>
-    <main>
-        <div class="center-text">
-            <h2 class="coming-soon">COMING SOON</h2>
-        </div>
-
-      </p>
-        </div>
-    </main>
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const elements = document.querySelectorAll(".fade-in");
-        elements.forEach((element, index) => {
-            element.style.transitionDelay = `${index * 0.3}s`;
-            element.classList.add("fadeInAnimation");
-        });
-    });
-</script>
-
+    <div>
+        <h1>Ostli</h1>
+        <h2>coming soon</h2>
+    </div>
 </body>
 </html>
