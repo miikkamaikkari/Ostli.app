@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ostli</title>
     <style>
         body {
+            background-color: white;
+            color: blue;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
         }
-
         .header {
-            background-color: #0000ff;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
         }
-
-        .content {
-            margin: 15px;
-            color: #000;
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px);
+            font-size: 3em;
+            font-weight: bold;
+        }
+        .header, .center {
+            transition: all 0.3s ease;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Welcome to Ostli</h1>
+        <div>Ostli</div>
+        <div>
+            <a href="#download">Download</a> | 
+            <a href="#about">About Us</a>
+        </div>
     </div>
-    <div class="content">
-        <p>This is a modern, interactive website for the Ostli app.</p>
-        <!-- Add more content here -->
+    <div class="center">
+        Ostli
     </div>
 </body>
 </html>
