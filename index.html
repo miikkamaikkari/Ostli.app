@@ -3,6 +3,7 @@
 <head>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap'); /* Import a bold font */
         body {
             background: linear-gradient(to right, #0072ff, #00d2ff);
             color: white;
@@ -11,6 +12,7 @@
             padding: 0;
             box-sizing: border-box;
             font-size: 1.2em;
+            transition: all 0.3s ease; /* Add transition for smooth animation */
         }
         .header {
             display: flex;
@@ -19,10 +21,12 @@
             background-color: rgba(255, 255, 255, 0.1);
             box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
             border-radius: 10px;
+            transition: all 0.3s ease; /* Add transition for smooth animation */
         }
         .header div:first-child {
             font-size: 2em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease; /* Add transition for smooth animation */
         }
         .header a {
             color: white;
@@ -44,10 +48,14 @@
             text-transform: uppercase; /* Make the text all uppercase */
             letter-spacing: 2px; /* Increase spacing between letters */
             transform: scaleY(0.8); /* Decrease height */
+            font-family: 'Oswald', sans-serif; /* Change the font to a more bold one */
+            transition: all 0.3s ease; /* Add transition for smooth animation */
         }
         .features {
             padding: 20px;
             font-size: 1.5em;
+            background-color: rgba(255, 255, 255, 0.1); /* Add a white background color */
+            transition: all 0.3s ease; /* Add transition for smooth animation */
         }
         .download-section {
             display: flex;
@@ -55,6 +63,7 @@
             align-items: center;
             padding: 20px;
             font-size: 1.5em;
+            transition: all 0.3s ease; /* Add transition for smooth animation */
         }
         .download-section button {
             font-size: 1em;
@@ -76,11 +85,13 @@
             align-items: center;
             padding: 20px;
             font-size: 1.5em;
+            transition: all 0.3s ease; /* Add transition for smooth animation */
         }
         .iphone-section img {
             width: 200px;
             height: auto;
             margin-right: 20px;
+            transition: all 0.3s ease; /* Add transition for smooth animation */
         }
         .footer {
             padding: 10px;
@@ -88,9 +99,7 @@
             background-color: rgba(255, 255, 255, 0.1);
             box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
             border-radius: 10px;
-        }
-        .header, .center, .features, .download-section, .footer {
-            transition: all 0.3s ease;
+            transition: all 0.3s ease; /* Add transition for smooth animation */
         }
     </style>
 </head>
