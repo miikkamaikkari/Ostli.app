@@ -11,6 +11,7 @@
             background-color: black;
             color: white;
             font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -24,6 +25,21 @@
             justify-content: space-between;
             height: 80px;
             padding: 0 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            animation: fade-in 1s ease-in-out;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .logo {
@@ -57,17 +73,35 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: row;
+        }
+
+        .hero .content {
+            width: 50%;
         }
 
         .hero h1 {
             font-size: 64px;
             text-align: center;
+            animation: slide-up 1s ease-in-out;
+        }
+
+        @keyframes slide-up {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .hero p {
             font-size: 24px;
             text-align: center;
             margin-top: 20px;
+            animation: slide-up 1s ease-in-out 0.5s;
         }
 
         .hero button {
@@ -80,11 +114,17 @@
             color: black;
             font-size: 20px;
             cursor: pointer;
+            animation: slide-up 1s ease-in-out 1s;
         }
 
         .hero button:hover {
             transform: scale(1.1);
             transition: 0.3s;
+        }
+
+        .hero spline-viewer {
+            width: 50%;
+            height: 100%;
         }
 
         .features {
@@ -96,6 +136,7 @@
 
         .feature {
             text-align: center;
+            animation: fade-in 1s ease-in-out;
         }
 
         .feature img {
@@ -113,6 +154,49 @@
             font-size: 18px;
         }
 
+        .about {
+            padding: 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            animation: slide-left 1s ease-in-out;
+        }
+
+        @keyframes slide-left {
+            from {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .about .image {
+            width: 40%;
+        }
+
+        .about .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about .text {
+            width: 50%;
+        }
+
+        .about .text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about .text p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
         .footer {
             padding: 20px;
             background-color: #333;
@@ -120,31 +204,58 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            animation: fade-in 1s ease-in-out;
         }
 
         .footer p {
             font-size: 16px;
         }
+
+        #home {
+            scroll-margin-top: 80px;
+        }
+
+        #about {
+            scroll-margin-top: 80px;
+        }
+
+        #contact {
+            scroll-margin-top: 80px;
+            animation: slide-right 1s ease-in-out;
+        }
+
+        @keyframes slide-right {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
     </style>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.51/build/spline-viewer.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="navbar">
             <div class="logo">OSTLI</div>
             <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-        <div class="hero">
+        <div class="hero" id="home">
             <div class="content">
                 <h1>The ultimate app for making lists</h1>
                 <p>OSTLI lets you create, organize, and share your lists with ease.</p>
                 <button>Download Now</button>
             </div>
+            <spline-viewer url="https://prod.spline.design/G0j1DP7ClSj2vOYS/scene.splinecode"></spline-viewer>
         </div>
-        <div class="features">
+        <div class="features" id="features">
             <div class="feature">
                 <img src="create.png" alt="Create">
                 <h3>Create</h3>
@@ -161,10 +272,26 @@
                 <p>Send your lists to your friends, family, or coworkers with a tap.</p>
             </div>
         </div>
+        <div class="about" id="about">
+            <div class="image">
+                <img src="ostli-app.png" alt="OSTLI app">
+            </div>
+            <div class="text">
+                <h2>About OSTLI</h2>
+                <p>OSTLI is a simple and powerful app that helps you create, organize, and share your lists. Whether you need to make a grocery list, a to-do list, a wish list, or any other kind of list, OSTLI has you covered. You can easily add items, reorder them, mark them as done, and delete them with simple gestures. You can also customize your lists with different colors, icons, and backgrounds. And you can share your lists with anyone via email, text, or social media.</p>
+                <p>OSTLI is designed to make your life easier and more productive. You can use it for personal, professional, or educational purposes. You can also sync your lists across your devices and access them anytime, anywhere. OSTLI is the ultimate app for making lists.</p>
+            </div>
+        </div>
+        <div class="contact" id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feedback, or suggestions, please feel free to contact us.</p>
+            <p>Email: ostli@app.com</p>
+            <p>Phone: +358 123 4567</p>
+            <p>Address: Helsinki, Finland</p>
+        </div>
     </div>
     <div class="footer">
         <p>© 2024 OSTLI. All rights reserved.</p>
     </div>
 </body>
 </html>
-
