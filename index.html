@@ -1,66 +1,26 @@
-<html>
+<!DOCTYPE html>
+<html lang="fi">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ostli</title>
+  <!-- Link to your external CSS file -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">OSTLI</div>
-            <ul class="navbar">
-                <li class="active" data-section="1">Koti</li>
-                <li data-section="2">Ominaisuudet</li>
-                <li data-section="3">Hinnoittelu</li>
-                <li data-section="4">Yhteystiedot</li>
-            </ul>
-        </div>
-        <div class="section" id="section1">
-            <div class="animation">
-                <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.51/build/spline-viewer.js"></script>
-                <spline-viewer url="https://prod.spline.design/G0j1DP7ClSj2vOYS/scene.splinecode"></spline-viewer>
-            </div>
-            <div class="content">
-                <div class="logo">OSTLI</div>
-                <p>OSTLI antaa sinun luoda, järjestää ja jakaa listoja mistä tahansa haluat. Olipa kyseessä sitten kauppalista, toivomuslista, tehtävälista tai soittolista, OSTLI tekee listojen hallinnasta helppoa ja hauskaa.</p>
-                <button>Lataa OSTLI</button>
-            </div>
-        </div>
-        <div class="section" id="section2">
-            <h1>Ominaisuudet</h1>
-            <p>Niin helppoa!</p>
-            <ul>
-                <li>Aloita luomalla tili
-Tili luodaan sähköpostin ja salasanan avulla. Kun tili on tehty, voi luoda ostoslistan tai liittyä yhteiseen sellaiseen.</li>
-                <li>Listan luominen
-Listan voi luoda painamalla "Lisää uusi lista" painiketta. Muuta ei tarvitsekaan tehdä! Nyt voit lisätä listalle haluamiasi asioita tai poistaa jo listalle listattuja asioita.</li>
-                <li>Listojen jakaminen
-Jokaiselle listalle on annettu koodi jonka pystyy jakamaan kenelle haluaa. Tarkista koodi ja kirjoita se apissa kohtaan "Liity listaan". Nyt voit perheen tai vaikka ystäväporukan kanssa suunnitella ja toteuttaa listoja.</li>
-                <li>Siinäpä se
-Emme halunneet tehdä arjen suorittamisesta haastavempaa joten appi on erittäin yksinkertainen. Se sopii perheen nuorimmasta vanhimpaan ja jokainen oppii apin käytön pienellä harjoituksella.</li>
-            </ul>
-            <button>Lue lisää</button>
-        </div>
-        <div class="section" id="section3">
-            <h1>Hinnoittelu</h1>
-            <p>OSTLI on ilmainen ladattavaksi ja käyttää jopa 10 listalle. Jos haluat luoda enemmän listoja, voit päivittää OSTLI Premiumiin pientä maksua vastaan. OSTLI Premium antaa sinulle:</p>
-            <ul>
-                <li>Rajattomasti listoja</li>
-                <li>Ei mainoksia</li>
-                <li>Mukautetut teemat ja kuvakkeet</li>
-                <li>Ensisijainen tuki</li>
-            </ul>
-            <button>Hanki OSTLI Premium</button>
-        </div>
-        <div class="section" id="section4">
-            <h1>Yhteystiedot</h1>
-            <p>Kuulisimme mielellämme sinulta. Jos sinulla on kysyttävää, palautetta tai ehdotuksia, ota meihin yhteyttä. Voit:</p>
-            <ul>
-                <li>Lähettää meille sähköpostia osoitteeseen ostli@app.com</li>
-                <li>Seurata meitä Twitterissä @ostliapp</li>
-                <li>Tykkää meistä Facebookissa @ostliapp</li>
-                <li>Vierailla verkkosivuillamme www.ostli.app</li>
-            </ul>
-            <button>Ota yhteyttä</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
+  <!-- Embed the animation as the background -->
+  <div class="animation">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.51/build/spline-viewer.js">
+    </script>
+    <spline-viewer url="https://prod.spline.design/G0j1DP7ClSj2vOYS/scene.splinecode">
+    </spline-viewer>
+  </div>
+  <!-- Add the text elements over the animation -->
+  <div class="text">
+    <h1>OSTLI</h1>
+    <p>Uusi tapa helpottaa arkeasi!</p>
+    <!-- Add the download button with a link to your app -->
+    <a href="#" class="button">Lataa nyt</a>
+  </div>
 </body>
 </html>
