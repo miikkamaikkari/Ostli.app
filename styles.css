@@ -1,1 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    color: white;
+    background-color: black;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+}
+
+.navbar li {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.navbar li:hover {
+    color: #00a0ff;
+}
+
+.navbar li.active {
+    color: #00a0ff;
+    border-bottom: 2px solid #00a0ff;
+}
+
+.section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.section ul {
+    font-size: 20px;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.section button {
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00a0ff;
+    color: black;
+    cursor: pointer;
+}
+
+.section button:hover {
+    background-color: #0080cc;
+}
+
+.animation {
+    width: 400px;
+    height: 800px;
+}
+
+.content {
+    margin-left: 50px;
+    padding: 20px;
+}
 
