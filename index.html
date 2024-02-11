@@ -1,1 +1,170 @@
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .menu a:hover {
+            color: gray;
+        }
+
+        .hero {
+            height: 600px;
+            background-image: url("ostli.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .hero button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+
+        .features {
+            padding: 40px 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 18px;
+        }
+
+        .footer {
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">OSTLI</div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="hero">
+            <div class="content">
+                <h1>The ultimate app for making lists</h1>
+                <p>OSTLI lets you create, organize, and share your lists with ease.</p>
+                <button>Download Now</button>
+            </div>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <img src="create.png" alt="Create">
+                <h3>Create</h3>
+                <p>Make any kind of list you want, from shopping lists to bucket lists.</p>
+            </div>
+            <div class="feature">
+                <img src="organize.png" alt="Organize">
+                <h3>Organize</h3>
+                <p>Sort, filter, and prioritize your lists with simple gestures.</p>
+            </div>
+            <div class="feature">
+                <img src="share.png" alt="Share">
+                <h3>Share</h3>
+                <p>Send your lists to your friends, family, or coworkers with a tap.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 OSTLI. All rights reserved.</p>
+    </div>
+</body>
+</html>
 
