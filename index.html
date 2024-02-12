@@ -82,16 +82,16 @@
         .hero h1 {
             font-size: 128px;
             text-align: left;
-            animation: sweep-to-right 1s ease-in-out;
+            animation: sweep-to-right 1s;
         }
 
         @keyframes sweep-to-right {
             from {
-                transform: translateY(100px);
+                transform: translateX(100px);
                 opacity: 0;
             }
             to {
-                transform: translateY(0);
+                transform: translateX(0);
                 opacity: 1;
             }
         }
