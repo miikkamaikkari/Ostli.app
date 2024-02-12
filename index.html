@@ -30,10 +30,9 @@
             left: 0;
             right: 0;
             z-index: 1;
-            animation: slide-in 1s ease-in-out;
         }
 
-        @keyframes slide-in {
+        @keyframes sweep-to-right {
             from {
                 opacity: 0;
             }
@@ -83,10 +82,10 @@
         .hero h1 {
             font-size: 128px;
             text-align: left;
-            animation: slide-in 1s ease-in-out;
+            animation: sweep-to-right 1s ease-in-out;
         }
 
-        @keyframes slide-in {
+        @keyframes sweep-to-right {
             from {
                 transform: translateY(100px);
                 opacity: 0;
@@ -101,7 +100,7 @@
             font-size: 24px;
             text-align: left;
             margin-top: 20px;
-            animation: slide-in 1s ease-in-out 0.5s;
+            animation: sweep-to-right 1s ease-in-out 0.5s;
         }
 
         .hero button {
@@ -114,7 +113,7 @@
             color: white;
             font-size: 20px;
             cursor: pointer;
-            animation: slide-in 1s ease-in-out 1s;
+            animation: sweep-to-right 1s ease-in-out 1s;
         }
 
         .hero button:hover {
