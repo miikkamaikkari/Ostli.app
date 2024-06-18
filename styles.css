@@ -1,1 +1,83 @@
+/* Updated styles for black theme */
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'San Francisco', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #000;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/* Main content styles */
+main {
+  padding-top: 60px; /* Adjust based on header height */
+}
+
+.section-style {
+  min-height: 100vh;
+}
+
+.content {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   text-align: center;
+   padding-top: calc(100vh - 60px); /* Full height minus header */
+}
+
+.text-container h1 {
+   font-size: 5em; /* Large text for Ostli */
+   margin-bottom: 0.5em; /* Spacing between elements */
+}
+
+.text-container p {
+   font-size: 2em; /* Subtitle size */
+   font-weight: lighter; /* Lighter font for subtitle */
+}
+
+/* iPhone image styles */
+.iphone-container img {
+   max-width: 50%; /* Adjust size as needed */
+   animation-name: slideInRight; /* Animation name */
+   animation-duration: 2s; /* Animation duration */
+   animation-timing-function: ease-out; /* Smooth animation */
+}
+
+/* Add keyframes for iPhone slide-in animation */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
