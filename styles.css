@@ -247,7 +247,7 @@ footer .social-links a {
 }
 
 .hero-text {
-    animation: slideInFromRight
+    animation: slideInFromLeft
     1.5s ease-out;
 }
 
