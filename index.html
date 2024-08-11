@@ -1,311 +1,105 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 80px;
-            padding: 0 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1;
-        }
-
-        @keyframes sweep-to-right {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .logo {
-            font-size: 32px;
-            font-weight: bold;
-        }
-
-        .menu {
-            display: flex;
-            list-style: none;
-        }
-
-        .menu li {
-            margin-left: 20px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .menu a:hover {
-            color: gray;
-        }
-
-        .hero {
-            height: 600px;
-            background-image: url("ostli.jpg");
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-        }
-
-        .hero .content {
-            width: 50%;
-        }
-
-        .hero h1 {
-            font-size: 128px;
-            text-align: left;
-            animation: sweep-to-right 1s;
-        }
-
-        @keyframes sweep-to-right {
-            from {
-                transform: translateX(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .hero p {
-            font-size: 24px;
-            text-align: left;
-            margin-top: 20px;
-            animation: sweep-to-right 1s ease-in-out 0.5s;
-        }
-
-        .hero button {
-            display: block;
-            margin: 10px;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            background-color: blue;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            animation: sweep-to-right 1s ease-in-out 1s;
-        }
-
-        .hero button:hover {
-            transform: scale(1.1);
-            transition: 0.3s;
-        }
-
-        .hero spline-viewer {
-            width: 50%;
-            height: 100%;
-        }
-
-        .features {
-            padding: 40px 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .feature {
-            text-align: center;
-            animation: sweep-to-right 1s ease-in-out;
-        }
-
-        .feature img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-        }
-
-        .feature h3 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .feature p {
-            font-size: 18px;
-        }
-
-        .about {
-            padding: 40px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            animation: slide-left 1s ease-in-out;
-        }
-
-        @keyframes slide-left {
-            from {
-                transform: translateX(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .about .image {
-            width: 40%;
-        }
-
-        .about .image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .about .text {
-            width: 50%;
-        }
-
-        .about .text h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .about .text p {
-            font-size: 20px;
-            line-height: 1.5;
-        }
-
-        .footer {
-            padding: 20px;
-            background-color: black;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: sweep-to-right 1s ease-in-out;
-        }
-
-        .footer p {
-            font-size: 16px;
-        }
-
-        #home {
-            scroll-margin-top: 80px;
-        }
-
-        #about {
-            scroll-margin-top: 80px;
-        }
-
-        #contact {
-            scroll-margin-top: 80px;
-            animation: slide-right 1s ease-in-out;
-        }
-
-        @keyframes slide-right {
-            from {
-                transform: translateX(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-    </style>
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.51/build/spline-viewer.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSTLI - Share Your Lists</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="navbar">
+    <header>
+        <nav>
             <div class="logo">OSTLI</div>
-            <ul class="menu">
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#download">Download</a></li>
             </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero fade-in-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Make Lists, Share Moments</h1>
+                    <p>Create, manage, and share your lists effortlessly with OSTLI.</p>
+                    <a href="#download" class="cta-button">Get the App</a>
+                </div>
+                <div class="hero-image">
+                    <spline-viewer url="https://prod.spline.design/G0j1DP7ClSj2vOYS/scene.splinecode"></spline-viewer>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section id="features" class="fade-in-section">
+            <h2>Features</h2>
+            <div class="features-container">
+                <div class="feature-card">
+                    <img src="icon1.svg" alt="Feature 1">
+                    <h3>Organize Effortlessly</h3>
+                    <p>Create and manage your lists with ease.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="icon2.svg" alt="Feature 2">
+                    <h3>Share with Friends</h3>
+                    <p>Collaborate with friends and family in real-time.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="icon3.svg" alt="Feature 3">
+                    <h3>Stay in Sync</h3>
+                    <p>All your lists, always up-to-date on all devices.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Download Section -->
+        <section id="download" class="fade-in-section">
+            <h2>Download OSTLI</h2>
+            <p>Get started with OSTLI on your preferred platform:</p>
+            <div class="download-buttons">
+                <a href="#" class="app-store">App Store</a>
+                <a href="#" class="google-play">Google Play</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 OSTLI. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
         </div>
-        <div class="hero" id="home">
-            <div class="content">
-                <h1>OSTLI</h1>
-                <p>Uusi tapa helpottaa arkea!</p>
-                <button>Lataa</button>
-            </div>
-            <spline-viewer url="https://prod.spline.design/G0j1DP7ClSj2vOYS/scene.splinecode"></spline-viewer>
-        </div>
-        <div class="features" id="features">
-            <div class="feature">
-                <h3>Luo</h3>
-                <p></p>
-            </div>
-            <div class="feature">
-                <h3>Organisoi</h3>
-                <p></p>
-            </div>
-            <div class="feature">
-                <h3>Jaa</h3>
-                <p></p>
-            </div>
-        </div>
-        <div class="about" id="about">
-            <div class="image">
-                <img src="">
-            </div>
-            <div class="text">
-                <h2>Niin helppoa!</h2>
-                <p>1. Aloita luomalla tili</p>
-               <spacer>
-                    <p>Tili luodaan sähköpostin ja salasanan avulla. Kun tili on tehty, voi luoda ostoslistan tai liittyä yhteiseen sellaiseen.</p>
-                <spacer>
-                <p>2. Listan luominen</p>
-                <spacer>
-                    <p>Listan voi luoda painamalla "Lisää uusi lista" painiketta. Muuta ei tarvitsekaan tehdä! Nyt voit lisätä listalle haluamiasi asioita tai poistaa jo listalle listattuja asioita.</p>
-                <spacer>
-                <p>3. Listojen jakaminen</p>
-                <spacer>
-                    <p>Jokaiselle listalle on annettu koodi jonka pystyy jakamaan kenelle haluaa. Tarkista koodi ja kirjoita se apissa kohtaan "Liity listaan". Nyt voit perheen tai vaikka ystäväporukan kanssa suunnitella ja toteuttaa listoja.</p>
-                <spacer>
-                <p>4. Siinäpä se</p>
-                <spacer>
-                    <p>Emme halunneet tehdä arjen suorittamisesta haastavempaa joten appi on erittäin yksinkertainen. Se sopii perheen nuorimmasta vanhimpaan ja jokainen oppii apin käytön pienellä harjoituksella.</p>
-               <spacer>
-            </div>
-        </div>
-        <spacer>
-            <spacer>
-                <spacer>
-        <div class="contact" id="contact">
-            <h2>Yhteystiedot</h2>
-            <p>Email: info@ostli.app</p>
-            <p>Phone: +358 xxxxxx</p>
-        </div>
-    </div>
-    <div class="footer">
-        <p>© 2024 OSTLI. All rights reserved.</p>
-    </div>
+    </footer>
+
+    <!-- Fade-In/Out on Scroll Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in-section');
+            
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight * 0.9;
+
+                elements.forEach(element => {
+                    const boxTop = element.getBoundingClientRect().top;
+
+                    if (boxTop < triggerBottom) {
+                        element.classList.add('fade-in');
+                        element.classList.remove('fade-out');
+                    } else {
+                        element.classList.add('fade-out');
+                        element.classList.remove('fade-in');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility(); // Initial check on page load
+        });
+    </script>
 </body>
 </html>
-
-
-
