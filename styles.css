@@ -61,7 +61,7 @@ header .nav-links a:hover {
     align-items: center;
     justify-content: space-between;
     background: url('background.jpg') no-repeat center center/cover;
-    color: #fff;
+    color: blue;
     padding: 60px 40px;
     height: 100vh;
 }
