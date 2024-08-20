@@ -12,11 +12,11 @@ body {
 /* Header */
 header {
     background: #fff;
-    padding: 20px 100px;
+    padding: 20px 40px;
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
+    left: 2;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
