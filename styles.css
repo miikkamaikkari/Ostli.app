@@ -209,7 +209,7 @@ header .nav-links a:hover {
 .step-number {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: blue;
 }
 
 .step-number {
