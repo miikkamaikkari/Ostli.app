@@ -271,7 +271,7 @@ header .nav-links a:hover {
 
 .featured {
     background-color: #f0f4f8
-    color: var(--background-color);
+    color: white
     transform: scale(1.05);
 }
 
