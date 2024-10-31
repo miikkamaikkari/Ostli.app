@@ -275,6 +275,10 @@ header .nav-links a:hover {
     transform: scale(1.05);
 }
 
+.btn btn-primary {
+    background-color: blue:
+}
+
 /* Download Section */
 #download {
     background: #007AFF;
