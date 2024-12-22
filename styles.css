@@ -71,46 +71,91 @@ header .nav-links a:hover {
     overflow: hidden; /* Prevents content from being cut off */
 }
 
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url('background.jpg') no-repeat center center/cover;
+    color: blue;
+    padding: 60px 40px;
+    height: 100vh;
+    position: relative;
+    perspective: 1200px; /* Apply perspective for 3D effect */
+    transform-style: preserve-3d; /* Ensures 3D effect on child elements */
+    overflow: hidden; /* Ensures no content overflows */
+}
+
 /* Hero Image Section */
 .hero-image {
-    max-width: 100%; /* Ensures the image doesn't stretch too far */
+    width: 100%;
+    max-width: 700px; /* Keeps the Spline model within a defined width */
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1; /* Allows the Spline model to take up available space */
-    position: relative; /* Keeps the positioning within the hero section */
+    position: relative;
+    margin: 0 auto; /* Centers the phone model horizontally */
     z-index: 1;
-    margin-left: auto; /* Centers the phone */
-    margin-right: auto; /* Centers the phone */
 }
 
+/* Adjustments to the spline viewer to ensure proper scaling */
 .hero-image spline-viewer {
     width: 100%;
-    height: auto;
-    max-height: 700px; /* Prevents the phone from stretching too much on large screens */
+    height: 100%;
+    max-height: 700px; /* Prevents the phone from stretching vertically */
     border-radius: 0;
-    cursor: auto !important; /* Ensures the cursor stays visible */
+    cursor: auto !important; /* Prevents cursor from interfering with interaction */
     animation: fadeIn 1.5s ease-out;
 }
 
 /* Animation for Hero Image */
-.hero-image spline-viewer {
-    width: 100%;
-    height: auto;
-    max-height: 700px; /* Prevents the phone from stretching too much on large screens */
-    border-radius: 0px;
-    cursor: auto !important; /* Ensures the cursor stays visible */
-    animation: fadeIn 1.5s ease-out;
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-/* Media Queries for Large Screens */
-@media (min-width: 1024px) {
-    .hero-image {
-        max-width: 50%; /* Reduces the size of the phone on larger screens */
+/* Media Queries for Responsive Layout */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 60px 20px;
     }
 
+    .hero-image {
+        max-width: 80%; /* Ensures the phone is not too large on smaller screens */
+        margin: 0 auto; /* Keeps it centered */
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+/* For very small screens (phones) */
+@media (max-width: 768px) {
     .hero {
-        padding: 60px 100px;
+        padding: 60px 20px;
+    }
+
+    .hero-image {
+        max-width: 90%; /* Slightly larger phone on smaller devices */
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .hero h1 {
+        font-size: 36px; /* Adjusts for smaller screens */
+    }
+
+    .hero p {
+        font-size: 14px;
     }
 }
 
