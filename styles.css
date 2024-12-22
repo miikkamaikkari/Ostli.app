@@ -68,76 +68,52 @@ header .nav-links a:hover {
     position: relative;
     perspective: 1200px; /* Apply perspective to entire section */
     transform-style: preserve-3d; /* Ensures depth for all child elements */
+    overflow: hidden; /* Prevents content from being cut off */
 }
 
-/* Hero Section Animations */
-.hero-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.hero-text {
-    max-width: 40%;
-    animation: slideInFromLeft 1.5s ease-out;
-}
-
-.hero h1 {
-    font-size: 72px;
-    margin: 0;
-    color: #007AFF;
-}
-
-.hero p {
-    font-size: 20px;
-    margin: 30px 0;
-    color: #007AFF;
-}
-
-.cta-button {
-    background: #007AFF;
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 18px;
-    display: inline-block;
-    margin-top: 20px;
-    transition: background 0.3s ease;
-}
-
-.cta-button:hover {
-    background: #005BB5;
-}
-
+/* Hero Image Section */
 .hero-image {
-    max-width: 50%;
+    max-width: 100%; /* Ensures the image doesn't stretch too far */
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: rotateY(0); /* No rotation for image */
+    flex: 1; /* Allows the Spline model to take up available space */
+    position: relative; /* Keeps the positioning within the hero section */
+    z-index: 1;
+    margin-left: auto; /* Centers the phone */
+    margin-right: auto; /* Centers the phone */
+}
+
+.hero-image spline-viewer {
+    width: 100%;
+    height: auto;
+    max-height: 700px; /* Prevents the phone from stretching too much on large screens */
+    border-radius: 0;
+    cursor: auto !important; /* Ensures the cursor stays visible */
+    animation: fadeIn 1.5s ease-out;
 }
 
 /* Animation for Hero Image */
 .hero-image spline-viewer {
     width: 100%;
-    height: 700px;
+    height: auto;
+    max-height: 700px; /* Prevents the phone from stretching too much on large screens */
     border-radius: 0px;
     cursor: auto !important; /* Ensures the cursor stays visible */
     animation: fadeIn 1.5s ease-out;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+/* Media Queries for Large Screens */
+@media (min-width: 1024px) {
+    .hero-image {
+        max-width: 50%; /* Reduces the size of the phone on larger screens */
+    }
+
+    .hero {
+        padding: 60px 100px;
+    }
 }
 
-@keyframes slideInFromLeft {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(0); }
-}
 
 /* Features Section */
 #features {
