@@ -66,7 +66,8 @@ header .nav-links a:hover {
     padding: 60px 40px;
     height: 100vh;
     position: relative;
-    perspective: 1000px; /* 3D Effect */
+    perspective: 1200px; /* Apply perspective to entire section */
+    transform-style: preserve-3d; /* Ensures depth for all child elements */
 }
 
 /* Hero Section Animations */
@@ -115,8 +116,10 @@ header .nav-links a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: rotateY(0); /* No rotation for image */
 }
 
+/* Animation for Hero Image */
 .hero-image spline-viewer {
     width: 100%;
     height: 700px;
@@ -134,22 +137,6 @@ header .nav-links a:hover {
 @keyframes slideInFromLeft {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(0); }
-}
-
-/* Parallax Scroll (3D effect) */
-.hero {
-    transform-style: preserve-3d;
-    animation: parallax 20s infinite linear;
-}
-
-/* Parallax Effect */
-@keyframes parallax {
-    0% {
-        transform: rotateY(0deg);
-    }
-    100% {
-        transform: rotateY(360deg);
-    }
 }
 
 /* Features Section */
@@ -206,6 +193,76 @@ header .nav-links a:hover {
     justify-content: space-between;
     gap: 20px;
     animation: fadeIn 2s ease-out;
+}
+
+/* Pricing Section */
+#pricing {
+    padding: 80px 40px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#pricing h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.pricing-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #007AFF;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #007AFF;
+}
+
+.price span {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #aaa;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.pricing-card li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.pricing-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #007AFF;
 }
 
 /* Download Section */
