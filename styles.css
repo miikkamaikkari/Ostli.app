@@ -1,13 +1,12 @@
-/* General Reset */
-html, body {
+styles.css  /* styles.css */
+
+body {
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    width: 100%;
-    overflow-x: hidden;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-    background-color: #fafbfc; /* Light background */
-    color: #24292f; /* Dark text */
+    color: #333;
+    background-color: #f0f4f8;
 }
 
 /* Header */
@@ -17,7 +16,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
+    left: 2;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
@@ -65,100 +64,60 @@ header .nav-links a:hover {
     color: blue;
     padding: 60px 40px;
     height: 100vh;
-    position: relative;
-    perspective: 1200px; /* Apply perspective to entire section */
-    transform-style: preserve-3d; /* Ensures depth for all child elements */
-    overflow: hidden; /* Prevents content from being cut off */
 }
 
-/* Hero Section */
-.hero {
+.hero-content {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background: url('background.jpg') no-repeat center center/cover;
-    color: blue;
-    padding: 60px 40px;
-    height: 100vh;
-    position: relative;
-    perspective: 1200px; /* Apply perspective for 3D effect */
-    transform-style: preserve-3d; /* Ensures 3D effect on child elements */
-    overflow: hidden; /* Ensures no content overflows */
+    align-items: center;
+    width: 100%;
 }
 
-/* Hero Image Section */
+.hero-text {
+    max-width: 40%;
+}
+
+.hero h1 {
+    font-size: 72px;
+    margin: 0;
+    color: #007AFF;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 30px 0;
+    color: #007AFF;
+}
+
+.cta-button {
+    background: #007AFF;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #005BB5;
+}
+
 .hero-image {
-    width: 100%;
-    max-width: 700px; /* Keeps the Spline model within a defined width */
-    height: auto;
+    max-width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    margin: 0 auto; /* Centers the phone model horizontally */
-    z-index: 1;
 }
 
-/* Adjustments to the spline viewer to ensure proper scaling */
 .hero-image spline-viewer {
     width: 100%;
-    height: 100%;
-    max-height: 700px; /* Prevents the phone from stretching vertically */
-    border-radius: 0;
-    cursor: auto !important; /* Prevents cursor from interfering with interaction */
-    animation: fadeIn 1.5s ease-out;
+    height: 700px;
+    border-radius: 0px;
+    cursor: auto !important; /* Ensures the cursor stays visible */
 }
-
-/* Animation for Hero Image */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Media Queries for Responsive Layout */
-@media (max-width: 1024px) {
-    .hero {
-        padding: 60px 20px;
-    }
-
-    .hero-image {
-        max-width: 80%; /* Ensures the phone is not too large on smaller screens */
-        margin: 0 auto; /* Keeps it centered */
-    }
-
-    .hero h1 {
-        font-size: 48px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-}
-
-/* For very small screens (phones) */
-@media (max-width: 768px) {
-    .hero {
-        padding: 60px 20px;
-    }
-
-    .hero-image {
-        max-width: 90%; /* Slightly larger phone on smaller devices */
-    }
-
-    .hero-text {
-        max-width: 100%;
-        margin-bottom: 30px;
-    }
-
-    .hero h1 {
-        font-size: 36px; /* Adjusts for smaller screens */
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-}
-
 
 /* Features Section */
 #features {
@@ -186,7 +145,6 @@ header .nav-links a:hover {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeIn 1.5s ease-out;
 }
 
 .feature-card:hover {
@@ -208,32 +166,29 @@ header .nav-links a:hover {
     font-size: 16px;
 }
 
-/* Scroll Animations */
-.features-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    animation: fadeIn 2s ease-out;
+
+.step-number {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-/* Pricing Section */
-#pricing {
-    padding: 80px 40px;
-    background-color: #fff;
-    text-align: center;
-}
-
-#pricing h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-}
-
+.feature-grid,
+.steps-grid,
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
+.feature-card,
+.step-card,
 .pricing-card {
     background-color: #ffffff;
     padding: 2rem;
@@ -243,28 +198,62 @@ header .nav-links a:hover {
     transition: all 0.3s ease;
 }
 
+.feature-card:hover,
+.step-card:hover,
 .pricing-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
+.feature-card i,
+.step-number {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: blue;
+}
+
+.step-number {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+#pricing h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+
 .pricing-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #007AFF;
+    color: var(--primary-color);
 }
 
 .price {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #007AFF;
+    color: var(--text-color);
 }
 
 .price span {
     font-size: 1rem;
     font-weight: normal;
-    color: #aaa;
+    color: var(--text-light);
 }
 
 .pricing-card ul {
@@ -283,7 +272,17 @@ header .nav-links a:hover {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #007AFF;
+    color: var(--text-color);
+}
+
+.featured {
+    background-color: #f0f4f8
+    color: white
+    transform: scale(1.05);
+}
+
+.btn btn-primary {
+    background-color: blue:
 }
 
 /* Download Section */
@@ -331,7 +330,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px;
-    margin-top: 0;
+    margin-top: 0px;
 }
 
 footer p {
@@ -350,36 +349,161 @@ footer .social-links a {
     font-size: 16px;
 }
 
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+
+.hero-text {
+    animation: slideInFromLeft
+    1.5s ease-out;
+}
+
+.hero-image spline-viewer {
+animation: fadeIn 1.5s ease-out;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
+.hero {
+flex-direction: column;
+text-align: center;
+}
     .hero-text {
-        max-width: 100%;
-        margin-bottom: 30px;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    max-width: 100%;
+}
+
+.features-container {
+    flex-direction: column;
+}
+
+.feature-card {
+    width: 100%;
+}
+
+.download-buttons {
+    flex-direction: column;
+}
+
+.download-buttons a {
+    width: 80%;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 1s forwards;
+}
+
+/* General Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #0d6efd; /* Blue background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.download-button {
+    background-color: #fff;
+    color: #0d6efd;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
     }
 
-    .hero-image {
-        max-width: 100%;
+    .navbar {
+        justify-content: space-between;
+        padding: 10px 20px;
     }
 
-    .features-container {
-        flex-direction: column;
-    }
-
-    .feature-card {
-        width: 100%;
-    }
-
-    .download-buttons {
-        flex-direction: column;
-    }
-
-    .download-buttons a {
-        width: 80%;
-        text-align: center;
+    .download-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
     }
 }
