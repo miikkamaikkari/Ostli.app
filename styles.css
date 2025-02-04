@@ -425,16 +425,6 @@ text-align: center;
     opacity: 1;
     animation: fadeOut 1s forwards;
 }
-
-/* General Reset
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box; */
-}
-
 /* Navbar Styles */
 .navbar {
     display: flex;
