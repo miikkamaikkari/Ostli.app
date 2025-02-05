@@ -61,10 +61,15 @@ header nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: url('background.jpg') no-repeat center center/cover;
     padding: 80px 40px;
     height: 100vh;
     text-align: left;
+    background: url('background.jpg') no-repeat center center/cover;
+}
+
+.hero .text-section {
+    max-width: 50%;
+    padding-right: 20px;
 }
 
 .hero h1 {
@@ -80,8 +85,7 @@ header nav {
     margin: 20px 0;
 }
 
-/* Call to Action Button */
-.cta-button {
+.hero .cta-button {
     background: #007AFF;
     color: #fff;
     padding: 14px 28px;
@@ -94,43 +98,48 @@ header nav {
     transition: all 0.3s ease;
 }
 
-/* Ensure button font doesn't change */
-.cta-button {
-    font-family: inherit;
-}
-
-.cta-button:hover {
+.hero .cta-button:hover {
     background: #005BB5;
 }
 
 /* Features */
 #features {
+    display: flex;
+    justify-content: space-between;
     padding: 80px 40px;
     text-align: center;
     background-color: #ffffff;
 }
 
-#features h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 40px;
-}
-
-/* Feature cards */
-.feature-card {
+#features .feature-card {
     background: #f8f9fb;
     padding: 30px;
     border-radius: 16px;
+    width: 30%;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+#features .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
 /* Pricing */
+#pricing {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 40px;
+    text-align: center;
+    background-color: #f8f9fb;
+}
+
 .pricing-card {
     background: #ffffff;
     padding: 2rem;
     border-radius: 12px;
+    width: 30%;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
@@ -160,7 +169,7 @@ footer p {
     font-size: 14px;
 }
 
-/* Specific fixes for fonts in buttons and other UI elements */
+/* Ensure button font doesn't change */
 button, .cta-button, .pricing-card, .feature-card, .nav-links a {
     font-family: inherit;  /* Inherit font from body but leave layout intact */
 }
