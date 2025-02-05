@@ -94,6 +94,11 @@ header nav {
     transition: all 0.3s ease;
 }
 
+/* Ensure button font doesn't change */
+.cta-button {
+    font-family: inherit;
+}
+
 .cta-button:hover {
     background: #005BB5;
 }
@@ -111,6 +116,7 @@ header nav {
     margin-bottom: 40px;
 }
 
+/* Feature cards */
 .feature-card {
     background: #f8f9fb;
     padding: 30px;
@@ -118,11 +124,6 @@ header nav {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
 /* Pricing */
@@ -157,4 +158,9 @@ footer .social-links a {
 footer p {
     margin: 0;
     font-size: 14px;
+}
+
+/* Specific fixes for fonts in buttons and other UI elements */
+button, .cta-button, .pricing-card, .feature-card, .nav-links a {
+    font-family: inherit;  /* Inherit font from body but leave layout intact */
 }
