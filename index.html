@@ -90,7 +90,7 @@
         }
 
         .logo-text {
-            font-size: 1.5rem;
+            font-size: 2.2rem; /* Increased from 1.5rem to make it larger */
             font-weight: 700;
             background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
             -webkit-background-clip: text;
@@ -133,13 +133,13 @@
         main {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 80px 5% 50px;
+            padding: 60px 5% 50px; /* Reduced top padding from 80px to 60px */
         }
 
         .hero {
             display: flex;
             align-items: center;
-            min-height: calc(100vh - 80px);
+            min-height: calc(100vh - 60px); /* Adjusted to match new top padding */
             position: relative;
             overflow: hidden;
         }
@@ -161,12 +161,21 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            gap: 50px;
+            gap: 30px; /* Reduced from 50px to bring content closer */
         }
 
         .hero-text {
-            flex: 1;
-            max-width: 500px;
+            flex: 1.2; /* Increased flex to give more space to text */
+            max-width: 550px;
+        }
+
+        .hero-visual {
+            flex: 1; /* Reduced visual space */
+        }
+
+        .hero-visual spline-viewer {
+            max-width: 500px; /* Added to limit spline viewer width */
+            width: 100%;
         }
 
         .hero h1 {
