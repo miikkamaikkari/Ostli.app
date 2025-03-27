@@ -1,34 +1,52 @@
 :root {
-    --primary-color: #007aff;
-    --background-color: #f5f5f7;
-    --text-color: #1d1d1f;
-    --card-background: white;
-    --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.05);
-    --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.1);
+    --color-primary: #007aff;
+    --color-background: #f5f5f7;
+    --color-text-dark: #1d1d1f;
+    --color-text-light: #86868b;
+    --color-white: #ffffff;
+    --color-card-background: rgba(255, 255, 255, 0.8);
+    --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.3s ease;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
     line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.02) 100%),
+        radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.02) 100%);
+    z-index: 2;
 }
 
 header {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
     z-index: 100;
-    padding: 15px 5%;
-    box-shadow: var(--shadow-subtle);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
 
 nav {
@@ -37,14 +55,15 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 15px 5%;
 }
 
-nav img {
-    height: 50px;
+.logo {
+    height: 40px;
     transition: transform 0.3s ease;
 }
 
-nav img:hover {
+.logo:hover {
     transform: scale(1.05);
 }
 
@@ -56,9 +75,10 @@ nav img:hover {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--color-text-dark);
     font-weight: 500;
     position: relative;
+    transition: color 0.3s ease;
 }
 
 .nav-links a::after {
@@ -68,8 +88,12 @@ nav img:hover {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: var(--primary-color);
-    transition: width 0.3s;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
 }
 
 .nav-links a:hover::after {
@@ -77,7 +101,7 @@ nav img:hover {
 }
 
 main {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 100px 5% 50px;
 }
@@ -85,53 +109,95 @@ main {
 .hero {
     display: flex;
     align-items: center;
-    min-height: 80vh;
+    min-height: 100vh;
     gap: 50px;
+    position: relative;
 }
 
 .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.hero-text {
     flex: 1;
+    max-width: 500px;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    font-weight: 600;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
     margin-bottom: 20px;
-    color: var(--text-color);
+    background: linear-gradient(45deg, #007aff, #5856d6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    color: var(--color-text-light);
+    margin-bottom: 30px;
+}
+
+.hero-visual {
+    flex: 1;
+    max-width: 600px;
+    perspective: 1000px;
+}
+
+.spline-viewer {
+    transform: rotateY(-10deg);
+    transition: transform 0.5s ease;
+}
+
+.spline-viewer:hover {
+    transform: rotateY(0);
 }
 
 .cta-button {
     display: inline-block;
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, #007aff, #5856d6);
     color: white;
-    padding: 12px 24px;
+    padding: 12px 30px;
     text-decoration: none;
     border-radius: 30px;
-    margin-top: 20px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 122, 255, 0.3);
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 122, 255, 0.4);
 }
 
-.features-container {
+.features-section {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.features-grid {
     display: flex;
     justify-content: space-between;
     gap: 30px;
-    margin-top: 50px;
 }
 
 .feature-card {
-    background: var(--card-background);
+    background: var(--color-white);
     border-radius: 15px;
-    padding: 30px;
+    padding: 40px;
     text-align: center;
     box-shadow: var(--shadow-subtle);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .feature-card:hover {
@@ -139,25 +205,54 @@ main {
     box-shadow: var(--shadow-hover);
 }
 
-.feature-card img {
-    max-width: 100px;
-    margin-bottom: 20px;
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #007aff, #5856d6);
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+}
+
+.feature-icon svg {
+    width: 40px;
+    height: 40px;
+    stroke: white;
+}
+
+.pricing-section {
+    text-align: center;
+    padding: 100px 0;
+    background: linear-gradient(to bottom right, #f5f5f7, #ffffff);
+}
+
+.pricing-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
 }
 
 .pricing-grid {
     display: flex;
-    gap: 30px;
     justify-content: center;
+    gap: 30px;
 }
 
 .pricing-card {
-    background: var(--card-background);
+    background: var(--color-white);
     border-radius: 15px;
-    padding: 30px;
-    text-align: center;
+    padding: 40px;
+    width: 350px;
     box-shadow: var(--shadow-subtle);
-    width: 300px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .pricing-card:hover {
@@ -165,19 +260,84 @@ main {
     box-shadow: var(--shadow-hover);
 }
 
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+.pricing-card .badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--color-primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
 }
 
-.fade-in-section.fade-in {
-    opacity: 1;
-    transform: translateY(0);
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+    background: linear-gradient(45deg, #007aff, #5856d6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-@media (max-width: 768px) {
-    .hero, .features-container, .pricing-grid {
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: var(--color-background);
+    color: var(--color-text-dark);
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007aff, #5856d6);
+    color: white;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 30px 5%;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+    .hero-content, .features-grid, .pricing-grid {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
     }
 }
