@@ -3,150 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ostli - Share Your Lists</title>
+    <title>Ostli - Elevate Your Lists</title>
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="noise-overlay"></div>
+    
     <header>
         <nav>
-            <img src="OstliLogo1.jpg" alt="Logo" width="175" height="auto">
+            <div class="logo-container">
+                <img src="OstliLogo1.jpg" alt="Ostli Logo" class="logo">
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#download">Download</a></li>
+                <li><a href="#pricing">Pricing</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <main>
-        <!-- Home Section -->
-        <section id="home" class="hero fade-in-section">
+        <section id="home" class="hero parallax-section">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Make Lists, Share Moments</h1>
-                    <p>Create, manage, and share your lists effortlessly with Ostli.</p>
-                    <a href="#download" class="cta-button">Get the App</a>
+                    <h1>Create. Share. Organize.</h1>
+                    <p>Seamlessly manage your lists with Ostli's intuitive platform.</p>
+                    <a href="#download" class="cta-button">Get Started</a>
                 </div>
-                <div class="hero-image">
-                    <spline-viewer url="https://prod.spline.design/G0j1DP7ClSj2vOYS/scene.splinecode"></spline-viewer>
-            </div>
-        </section>
-        
-        <!-- Features Section -->
-        <section id="features" class="fade-in-section">
-            <h2>Features</h2>
-            <div class="features-container">
-                <div class="feature-card">
-                    <img src="organize.png" alt="Feature 1">
-                    <h3>Organize Effortlessly</h3>
-                    <p>Create and manage your lists with ease.</p>
-                </div>
-                <div class="feature-card">
-                    <img src="share.png" alt="Feature 2">
-                    <h3>Share with family and friends</h3>
-                    <p>Collaborate with others in real-time.</p>
-                </div>
-                <div class="feature-card">
-                    <img src="sync.png" alt="Feature 3">
-                    <h3>Stay in Sync</h3>
-                    <p>All your lists, always up-to-date on all devices.</p>
+                <div class="hero-visual">
+                    <spline-viewer url="https://prod.spline.design/G0j1DP7ClSj2vOYS/scene.splinecode" class="spline-viewer"></spline-viewer>
                 </div>
             </div>
         </section>
 
-
-        <section id="pricing" class="pricing">
-            <div class="container" style="text-align: center;">
-                <h2>Invest in Your Success</h2>
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                                                                        <!Pricing cards>
-                        <h3>Essential</h3>
-                        <div class="price">FREE<span></span></div>
-                        <ul>
-                            <li>1 Shared list</li>
-                            <li>Unlimited personal lists</li>
-                            <li>Standard support</li>
-                        </ul>
-                        <button class="btn btn-primary">Get Started</button>
+        <section id="features" class="features-section">
+            <h2>Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
                     </div>
-                    <div class="pricing-card featured">
-                        <h3>Premium</h3>
-                        <div class="price">0.99€<span>/month</span></div>
-                        <ul>
-                            <li>Unlimited shared lists</li>
-                            <li>Advanced collaboration tools</li>
-                            <li>All Essential features</li>
-                            <li>Priority support</li>
-                        </ul>
-                        <button class="btn btn-primary">Ostli Premium</button>
+                    <h3>Collaborative</h3>
+                    <p>Share and collaborate in real-time with friends and family.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
                     </div>
-                    
-                    <div class="pricing-card">
-                        <h3>Annual Premium</h3>
-                        <div class="price">9.99€<span>/year</span></div>
-                        <ul>
-                            <li>Save 16.67 %</li>
-                            <li>Unlimited lists</li>
-                            <li>Unlimited shared lists</li>
-                            <li>Priority support</li>
-                        </ul>
-                        <button class="btn btn-primary">Upgrade to Annual Premium</button>
+                    <h3>Organized</h3>
+                    <p>Create, manage, and track your lists with ease.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M12 12l-1-1-1 1 1 1 1-1z"></path>
+                        </svg>
                     </div>
+                    <h3>Secure</h3>
+                    <p>Advanced privacy and security for your personal lists.</p>
                 </div>
             </div>
         </section>
-        
-        <!-- Download Section -->
-        <section id="download" class="fade-in-section">
-            <h2>Download Ostli</h2>
-            <p>Get started with Ostli on your preferred platform:</p>
-            <div class="download-buttons">
-                <a href="#" class="app-store">App Store</a>
-                <a href="#" class="google-play">Google Play</a>
+
+        <section id="pricing" class="pricing-section">
+            <h2>Choose Your Plan</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">$0<span>/forever</span></div>
+                    <ul>
+                        <li>1 Shared List</li>
+                        <li>Unlimited Personal Lists</li>
+                        <li>Basic Support</li>
+                    </ul>
+                    <button class="btn">Get Started</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="badge">Most Popular</div>
+                    <h3>Premium</h3>
+                    <div class="price">$0.99<span>/month</span></div>
+                    <ul>
+                        <li>Unlimited Shared Lists</li>
+                        <li>Advanced Collaboration</li>
+                        <li>Priority Support</li>
+                        <li>Cloud Sync</li>
+                    </ul>
+                    <button class="btn btn-primary">Go Premium</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Annual</h3>
+                    <div class="price">$9.99<span>/year</span></div>
+                    <ul>
+                        <li>Save 16% Annually</li>
+                        <li>All Premium Features</li>
+                        <li>Priority Support</li>
+                        <li>Advanced Analytics</li>
+                    </ul>
+                    <button class="btn">Upgrade</button>
+                </div>
             </div>
         </section>
     </main>
-    
+
     <footer>
-        <p>&copy; 2025 Ostli. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href=https://www.instagram.com/ostli.app/>Instagram</a>
+        <div class="footer-content">
+            <p>&copy; 2025 Ostli. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter</a>
+                <a href="https://www.instagram.com/ostli.app/" class="social-icon">Instagram</a>
+            </div>
         </div>
     </footer>
 
-    <!-- Fade-In/Out on Scroll Script -->
     <script>
+        // Parallax and Scroll Effects
         document.addEventListener('DOMContentLoaded', function() {
-            const elements = document.querySelectorAll('.fade-in-section');
+            const parallaxSections = document.querySelectorAll('.parallax-section');
             
-            function checkVisibility() {
-                const triggerBottom = window.innerHeight * 0.9;
-
-                elements.forEach(element => {
-                    const boxTop = element.getBoundingClientRect().top;
-
-                    if (boxTop < triggerBottom) {
-                        element.classList.add('fade-in');
-                        element.classList.remove('fade-out');
-                    } else {
-                        element.classList.add('fade-out');
-                        element.classList.remove('fade-in');
-                    }
+            window.addEventListener('scroll', function() {
+                let scrollPosition = window.pageYOffset;
+                
+                parallaxSections.forEach(section => {
+                    let speed = 0.5;
+                    section.style.transform = `translateY(${scrollPosition * speed}px)`;
                 });
-            }
-
-            window.addEventListener('scroll', checkVisibility);
-            checkVisibility(); // Initial check on page load
+            });
         });
     </script>
 </body>
